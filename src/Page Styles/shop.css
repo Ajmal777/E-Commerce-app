@@ -6,3 +6,8 @@
     transform: translateY(-50%);
 }
 
+@media (width <= 600px) {
+    .shop{
+        margin-bottom: 4rem;
+    }
+}
