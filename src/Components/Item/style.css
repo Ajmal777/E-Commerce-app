@@ -1,0 +1,44 @@
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  background-color: antiquewhite;
+  padding: 0.1rem;
+}
+
+.item > .details {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  color: black;
+  font-weight: 500;
+}
+
+.p-img {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.p-img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  scale: 1.1;
+  transition: scale .3s ease;
+}
+.item:hover .p-img > img{
+    scale: 1;
+}
+.item .favourite-btn{
+  opacity: 0;
+}
+.item:hover .favourite-btn{
+  opacity: 1;
+}
+

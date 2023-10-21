@@ -1,0 +1,16 @@
+.filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+}
+
+@media (width <= 450px){
+    .filter{
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,0 +1,19 @@
+.favourite-btn{
+    padding: 0.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.favourite-btn:hover{
+    border-color: var(--color-pink) !important;
+    color: var(--color-pink);
+}
