@@ -16,22 +16,21 @@ function Shop() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const endpoint =
-      currentCategory !== "all" ? `/category/${currentCategory}` : "";
-    const URL = `https://dummyjson.com/products${endpoint}?limit=${limit}`;
+      const endpoint =
+        currentCategory !== "all" ? `/category/${currentCategory}` : "";
+      const URL = `https://dummyjson.com/products${endpoint}?limit=${limit}`;
 
     axios
       .get(URL)
       .then((res) => {
         setHasMore(res.data.products.length > 0);
         setProductsList(res.data.products);
-        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
         setError(err);
-        setLoading(false);
-      });
+      })
+      .finally(() => setLoading(false));
   }, [currentCategory, limit]);
 
   useEffect(() => {
@@ -51,6 +50,8 @@ function Shop() {
         if (entries[0].isIntersecting && hasMore) {
           setLimit((prevLimit) => prevLimit + 20);
         }
+      }, {
+        rootMargin: '100px',
       });
       if (node) observer.current.observe(node);
     },

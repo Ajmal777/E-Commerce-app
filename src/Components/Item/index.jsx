@@ -12,7 +12,7 @@ function Item({ item, key, lastItemRef}) {
 
   useEffect(() => {
     setIsFavourite(checkFaourite(item));
-  }, []);
+  }, [item]);
 
   function handleFavourite(e){
     e.stopPropagation();
